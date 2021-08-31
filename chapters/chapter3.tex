@@ -1,0 +1,35 @@
+\chapter{La soluzione - Design e Implementazione}
+
+\section{Il linguaggio: Go}
+
+
+\section{Il sistema Warehouse}
+
+\subsection{Il sistema di code: NSQ}
+
+\subsection{Il database: TimescaleDB}
+
+\subsection{Il servizio di storage: MinIO}
+
+
+\section{Realizzazione delle API}
+
+In collaborazione con Gargano Daniele e Provornyy Igor sono state ideate e realizzate delle API per permettere agli utenti di ottenere i dati di cui alla sezione \ref{parametri}. Le API di seguito presentate sono le API su cui il lavoro che si sta mostrando si incentra maggiormente, per cui non saranno elencate e descritte le restanti.
+
+\subsection{Il formato YAML}
+
+\subsection{API byLocation}
+
+\subsection{API byDevices}
+
+\section{Processing delle richieste}
+
+\subsection{Estrazione e Parsing}
+
+La richiesta, in formato JSON, viene estratta da NSQ e "tradotto" in una struttura accuratamente ideata per rappresentare la richiesta.
+
+\subsection{Interrogazione del database}
+
+\subsection{Zip dei file}
+
+\subsection{Upload su MinIO}
