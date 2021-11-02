@@ -1,1 +1,22 @@
-\chapter{Conclusione e sviluppi futuri}
+\chapter{Conclusione}
+
+\section{Risultati ottenuti}
+Inizialmente, un sistema contenente i dati storici dei sensori che ne permettesse anche la fruizione era solamente un'idea all'interno del progetto SeismoCloud. Nel corso del lavoro, l'idea ha iniziato a prendere forma, fino ad arrivare ad una versione iniziale di un nuovo sistema, battezzato con il nome di Sistema di Warehouse. Lo sviluppo embrionale del sistema è stato realizzato con alcuni membri del team, per poi proseguire ognuno con lo sviluppo di un suo aspetto. L'obiettivo finale di questo lavoro non è quindi la messa in produzione dell'intero sistema, ma la predisposizione del lato di Back End a tale scopo, dopo un'attenta progettazione ed uno sviluppo forte di analisi di corner case e miglioramenti costanti. Il risultato è un prodotto funzionante, testato localmente, integrabile con il resto del sistema.
+
+\section{Sviluppi futuri}
+Lo sviluppo del lato Back End è solo una parte del sistema. Va quindi notato che la messa in produzione dello stesso non coinciderebbe con il suo funzionamento nel complesso. Prima di poter essere utilizzato ogni componente deve essere integrata. Il lavoro ha dato però adito a molti spunti per estendere il sistema e fornire maggiori servizi. La sezione presenta gli sviluppi futuri più interessanti.
+
+\paragraph{Integrazione delle componenti}
+Una prima argomentazione sul futuro del lavoro svolto riguarda il collegamento delle varie componenti del Sistema di Warehouse ed il relativo test nel complesso: durante lo sviluppo si è cercato di progettare le singole parti affinché il sistema sia integrabile senza effettuare modifiche, ma renderlo operativo è un'azione che potrebbe comunque sollevare situazioni non previste. 
+
+\paragraph{Test unitari e Test di sistema}
+Ogni software, prima di diventare parte di un sistema, dovrebbe essere capace di funzionare singolarmente. Durante lo sviluppo si è creato un ambiente di test locale capace di simulare l'inserimento di messaggi da parte di un finto Producer, ma ciò non può essere assimilato ad un vero e proprio test unitario; devono essere quindi prodotti dei test unitari per le funzioni critiche e non banali. Una volta verificato il funzionamento di ogni elemento a livello di test unitari, devono poi essere previsti dei test di sistema, che verificano che l'integrazione di ogni componente non mostri comportamenti inattesi.
+
+\paragraph{Estensione delle funzionalità sviluppate}
+La progettazione delle funzioni è stata altamente finalizzata al rendere il sistema quanto più estendibile possibile. Uno dei punti chiave nel progettare un nuovo sistema è non limitarsi a svilupparlo mirando alle funzionalità che offre inizialmente, ma permetterne un'estensione che lo renda sempre più utile e versatile in futuro. In termini di cosa può essere aggiunto, un esempio chiaro è il fornire agli utenti una più vasta scelta di attributi da richiedere o di formati di file in cui sono memorizzati i risultati. Ancora, i meccanismi di notifiche presenti potrebbero non essere più disponibili in un prossimo futuro, o potrebbero diventarne disponibili altri, motivo per il quale anche il sottosistema di notifiche permette un'aggiunta di nuovi meccanismi in modo semplice ed intuitivo.
+
+\paragraph{Utilità dei dati}
+Come accennato nei primi capitoli, il sistema nasce soprattutto per fornire i dati che interessano le scosse rilevate dai sensori ad esperti in grado di trarne informazioni rilevanti. Anche per questo motivo sono stati predisposti dall'inizio vari formati per la presentazione dei dati, così da non limitare le possibilità fin dalla prima versione del sistema. Con questi dati, esperti del settore della sismologia potrebbero trarre informazioni utili e necessarie a nuovi studi.
+
+\paragraph{Sviluppo di package aggiuntivi}
+Mentre si localizzavano dei package appropriati per la scrittura dei file in output, si è notato che, per la scrittura di file HDF5, esistono solamente package che sfruttano CGo, un package Go che permette l'importazione di codice C in programmi Go. Purtroppo, le performance degradano notevolmente chiamando funzioni del linguaggio C utilizzando questo package, pertanto sarebbe un buon punto di partenza (per un altro progetto) creare una libreria di lettura e scrittura di file HDF5, e renderla Open Source. Si incorre nella stessa problematica per il formato MiniSEED.

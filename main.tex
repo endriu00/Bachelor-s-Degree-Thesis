@@ -1,9 +1,48 @@
 \documentclass[Lau, italian, noexaminfo]{sapthesis}
 
-
+\usepackage[italian]{babel} %italian language package
+\usepackage{epigraph} %quoting package
+\usepackage{biblatex} %biblatex package, bibliography
 \usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx} %graphics package
+\usepackage{wrapfig} %for wrapping image and let text flanking image
+\usepackage{subcaption} %for flanking images
+\usepackage{minted} %for code snippets
+\usemintedstyle{tango} %for coloring the code
+\renewcommand\listoflistingscaption{Codici sorgente}
+\renewcommand{\listingscaption}{Codice sorgente}
+\usepackage[export]{adjustbox}
+\usepackage{listings}
+\usepackage{color}
 
-\title{Design ed Implementazione Back End del Sistema di Warehouse in SeismoCloud}
+
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Go,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+%sapthesis class configuration
+\title{Design ed Implementazione del Back End del  Sistema di Warehouse di SeismoCloud}
 \author{Andrea Stella}
 \IDnumber{1869065}
 \course{Informatica}
@@ -13,12 +52,17 @@
 \advisor{Prof. Emanuele Panizzi}
 \authoremail{stella.1869065@studenti.uniroma1.it}
 
+%adding bibliography file
+\addbibresource{bib/bibliography.bib}
+
 \begin{document}
 
 \maketitle
 
+\frontmatter
 \input{chapters/chapter0}
 
+\mainmatter
 \input{chapters/chapter1}
 
 \input{chapters/chapter2}
@@ -30,5 +74,8 @@
 \input{chapters/chapter5}
 
 \input{chapters/chapter6}
+
+\backmatter
+\input{chapters/chapter7}
 
 \end{document}
